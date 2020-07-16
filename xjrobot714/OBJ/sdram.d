@@ -1,0 +1,13 @@
+..\obj\sdram.o: ..\HARDWARE\SDRAM\sdram.c
+..\obj\sdram.o: ..\HARDWARE\SDRAM\sdram.h
+..\obj\sdram.o: ..\SYSTEM\sys\sys.h
+..\obj\sdram.o: E:\software_setup\keil\ARM\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
+..\obj\sdram.o: E:\software_setup\keil\ARM\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f767xx.h
+..\obj\sdram.o: ..\SYSTEM\sys\core_cm7.h
+..\obj\sdram.o: E:\software_setup\keil\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\sdram.o: ..\SYSTEM\sys\core_cmInstr.h
+..\obj\sdram.o: ..\SYSTEM\sys\cmsis_armcc.h
+..\obj\sdram.o: ..\SYSTEM\sys\core_cmFunc.h
+..\obj\sdram.o: ..\SYSTEM\sys\core_cmSimd.h
+..\obj\sdram.o: E:\software_setup\keil\ARM\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include\system_stm32f7xx.h
+..\obj\sdram.o: ..\SYSTEM\delay\delay.h
