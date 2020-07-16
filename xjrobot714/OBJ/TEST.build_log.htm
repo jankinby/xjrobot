@@ -21,24 +21,27 @@ Target DLL:      Segger\JL2CM3.dll V2.99.23.0
 Dialog DLL:      TCM.DLL V1.14.14.0
  
 <h2>Project:</h2>
-C:\Users\jankin\Desktop\xjrobot714 - 1\USER\TEST.uvprojx
+E:\software_file\gitfile\xjrobot714\USER\TEST.uvprojx
 Project File Date:  07/14/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'E:\software_setup\keil\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling task.c...
+compiling can_drive.c...
+..\HARDWARE\CAN_DRIVE\can_drive.c(140): warning:  #177-D: variable "temp" was declared but never referenced
+  	uint32_t temp=speed;
+..\HARDWARE\CAN_DRIVE\can_drive.c: 1 warning, 0 errors
 linking...
-Program Size: Code=19682 RO-data=1022 RW-data=808 ZI-data=2768  
+Program Size: Code=18614 RO-data=1018 RW-data=812 ZI-data=2772  
 FromELF: creating hex file...
-"..\OBJ\TEST.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\TEST.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\jankin\Desktop\xjrobot714 - 1\USER\RTE
+  E:\software_file\gitfile\xjrobot714\USER\RTE
   E:\software_setup\keil\ARM\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>

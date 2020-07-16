@@ -155,7 +155,7 @@ void Motor_Velocity(uint16_t COD_ID, uint32_t speed)
 	RxMSG_Vel.data[7]=(uint8_t)(speed>>24);
 	CAN1_Send(&RxMSG_Vel);
 	//delay_ms(10);
-	delay_us(2000);
+	delay_us(1000);
 	}
 }
 
@@ -194,7 +194,7 @@ void Motor_Current_Request(uint16_t COD_ID)
 	Cur_TxMessage.data[6]=0x00;
 	Cur_TxMessage.data[7]=0x00;
 	CAN1_Send(&Cur_TxMessage);
-	delay_ms(10);
+	delay_ms(1);
 }
 //电机故障查询 索引对象0x1001 
 void Motor_Error_query(uint16_t COD_ID)
@@ -212,7 +212,7 @@ void Motor_Error_query(uint16_t COD_ID)
 	Err_TxMessage.data[6]=0x00;
 	Err_TxMessage.data[7]=0x00;
 	CAN1_Send(&Err_TxMessage);
-	delay_ms(10);
+	delay_ms(1);
 }
 //电机故障复位 索引对象0x6040 2B为写16 0f与8f
 void Motor_ErrorReset_Request(uint16_t COD_ID)
@@ -230,10 +230,10 @@ void Motor_ErrorReset_Request(uint16_t COD_ID)
 	ErrRes_TxMessage.data[6]=0x00;
 	ErrRes_TxMessage.data[7]=0x00;
 	CAN1_Send(&ErrRes_TxMessage);
-	delay_ms(10);
+	delay_ms(1);
 	ErrRes_TxMessage.data[4]=0x8f;
 	CAN1_Send(&ErrRes_TxMessage);
-	delay_ms(10);
+	delay_ms(1);
 }
 
 

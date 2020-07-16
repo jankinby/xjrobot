@@ -27,15 +27,14 @@ void creatTask(void)
   	Odeometer();              //任务：里程计数据
     PS2DataRecrive();         //任务：解析Ps2手柄
 //	Massage_Timing_To_Pc();   //任务：信号处理单元toPC
-  	PS2ControlRun(PS2KEY);    //任务：遥控器控制运动
-//	EnginekeepRun();          //任务：保持发动机控制器处于运动状态
-//	engineStartStop(emginestarstopstate); // 任务： 发送机启动停止控制
-//  PS2ControlUnderPlate(PS2KEY); 
-//  UnderPlantControl();
-//	Battery_Data_Capture();    //任务: 电池信息
-//	Carsport_state();//车状态，是否保持前进
-//motor_State();//电机是否连接，且状态良好
-//	time_test1();
+//  	PS2ControlRun(PS2KEY);    //任务：遥控器控制运动
+//  	EnginekeepRun();          //任务：保持发动机控制器处于运动状态
+//  	engineStartStop(emginestarstopstate); // 任务： 发送机启动停止控制
+//    PS2ControlUnderPlate(PS2KEY); 
+//    UnderPlantControl();
+//  	Battery_Data_Capture();    //任务: 电池信息
+//    Carsport_state();//车状态，是否保持前进
+ //    motor_State();//电机是否连接，且状态良好
 }
 
 
@@ -123,7 +122,7 @@ float sin_=0;        //角度计算值
 float cos_=0;
 float delta_distance=0,delta_oriention=0;   //采样时间内走的距离
 float yaw_number=1.0f;//改直行会出错
-float distance_sum=0,distance_diff=0;
+float distance_sum=0,distance_diff=0,distance_sum_pre=0;
 float Yaw_Angle_1=0; //dt时间内方向变化值
 
 float const_frame=0,const_angle=0,const_speed=0; //速度m/s转编码值速度;
@@ -144,7 +143,7 @@ void Odeometer(void)
 		const_speed=10.0f*car_message.line_number*car_message.multiplier*car_message.deceleration_ratio/pi/car_message.wheel_diameter;//1mm/pi/d*2500*4*30*10 10分辨率		
     once=0;			
     }		
-	 if(OdomCount>OdomTime)
+	 if(OdomCount>=OdomTime)
 	 {
 		  Motor1encodeCountdiffvalue=Motor1EncodeCount-Pre_Motor1EncodeCount;
 	    Motor2encodeCountdiffvalue=Motor2EncodeCount-Pre_Motor2EncodeCount;
@@ -162,6 +161,7 @@ void Odeometer(void)
 		 // 同一侧两个编码器平均值
 			right=(Motor1encodeCountdiffvalue+Motor2encodeCountdiffvalue)/2.0f;// 1、2为右侧向前值为正
 			left=-(Motor4encodeCountdiffvalue+Motor3encodeCountdiffvalue)/2.0f;//3、4为左侧向前值为负
+			
 			distance_sum = 0.5f*(right+left);//短时间内，前进距离两侧速度和
 			distance_diff = right-left;//短时间内，转弯角度为两侧速度差
 			 
@@ -173,7 +173,6 @@ void Odeometer(void)
       cos_ = cos(Yaw_Angle_1);//计算出采样时间内的x坐标	 
 			X=X+distance_sum*cos_ *const_frame;   //距离*Yaw（偏角） 解析X坐标
 			Y=Y+distance_sum*sin_*const_frame;
-		 
 		  // 当前瞬时线速度  w=th/t
 		  SpeedV_Ang=Yaw_Angle_Diff/dt;    //角速度		 
 		 	SpeedV_V=(distance_sum*const_frame)/dt;    //速度=位移/时间； 时间=定时间*Timer     
@@ -209,7 +208,7 @@ void Odeometer(void)
 			Pre_Motor2EncodeCount=Motor2EncodeCount;
 			Pre_Motor3EncodeCount=Motor3EncodeCount;
 			Pre_Motor4EncodeCount=Motor4EncodeCount;
-			Data_Fusion_Fre++;//100ms加一	
+			Data_Fusion_Fre++;//10ms加一	
 	 }	 
 	 if(DataFrequency==0)
 	 {
@@ -251,7 +250,7 @@ void USART1_ReceiveData(void)
 void USART1Data_Process(void)
 	
 {
-	 if(Usart1RxNum)
+	 if(Usart1RxNum	)
 	{
 		  Usart1_Data_Analyse(USART1_RX_BUF[Usart1RxHead],USART1_RX_BUF[Usart1RxHead][2]+3);
 	    Usart1RxHead = (Usart1RxHead+1)%USART_RX_ARRAY_NUM;

@@ -1055,11 +1055,11 @@ ARM Macro Assembler    Page 17
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.dp --apcs=
 interwork --depend=..\obj\startup_stm32f767xx.d -o..\obj\startup_stm32f767xx.o 
--I"C:\Users\jankin\Desktop\xjrobot714 - 1\USER\RTE" -IE:\software_setup\keil\AR
-M\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IE:
-\software_setup\keil\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 521"
- --predefine="STM32F767xx SETA 1" --list=..\obj\startup_stm32f767xx.lst startup
-_stm32f767xx.s
+-IE:\software_file\gitfile\xjrobot714\USER\RTE -IE:\software_setup\keil\ARM\PAC
+K\Keil\STM32F7xx_DFP\2.12.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IE:\soft
+ware_setup\keil\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 521" --pr
+edefine="STM32F767xx SETA 1" --list=..\obj\startup_stm32f767xx.lst startup_stm3
+2f767xx.s
 
 
 
