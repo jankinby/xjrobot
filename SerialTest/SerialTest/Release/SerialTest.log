@@ -1,8 +1,11 @@
-﻿  SerialTestDlg.cpp
+﻿  stdafx.cpp
+  mscomm1.cpp
+  SerialTest.cpp
+  SerialTestDlg.cpp
   正在生成代码
-  1 of 221 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  217 of 221 functions (98.2%) were compiled, the rest were copied from previous compilation.
+    31 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
-  SerialTest.vcxproj -> C:\Users\jankin\Desktop\SerialTest\Release\SerialTest.exe
-  SerialTest.vcxproj -> C:\Users\jankin\Desktop\SerialTest\Release\SerialTest.pdb (Full PDB)
+  SerialTest.vcxproj -> E:\software_file\gitfile\SerialTest\Release\SerialTest.exe
+  SerialTest.vcxproj -> E:\software_file\gitfile\SerialTest\Release\SerialTest.pdb (Full PDB)

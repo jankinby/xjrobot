@@ -120,6 +120,7 @@ BOOL CSerialTestDlg::OnInitDialog()
 	m_comboCom.AddString(_T("COM8"));
 	m_comboCom.AddString(_T("COM9"));
 	m_comboCom.AddString(_T("COM10"));
+	m_comboCom.AddString(_T("COM11"));
 	m_combobox_bound.AddString(_T("9600"));
 	m_combobox_bound.AddString(_T("115200"));
 	m_combobox_bound.AddString(_T("38400"));
